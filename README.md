@@ -72,34 +72,51 @@ Input sanitization, escaping special characters, CSP.
 
 ##  Application Attacks – Quick Summary 
 
-Attack Type	**Process**	**Impact**	**Mitigation**
 
 ### SQL Injection (SQLi)
+
 **Process** Inject malicious SQL into input fields to manipulate database queries.
+
 **Impact** Data theft, data modification, admin access.	
+
 **Mitigation** Input validation, parameterized queries, stored procedures.
 
 ### Persistent XSS	
+
 **Process** Malicious script is stored in the database and served to users.
+
 **Impact** Cookie theft, account takeover, malware spread.
+
 **Mitigation** Output encoding, input sanitization, Content Security Policy (CSP).
 
 ### Reflective XSS
-**Process** Malicious script is sent via a crafted URL and reflected in server response.	
+
+**Process** Malicious script is sent via a crafted URL and reflected in server response.
+
 **Impact** Same as persistent XSS, requires victim to click link.	
+
  **Mitigation**Input sanitization, escaping characters, CSP.
 
 ### Command Injection
+
 **Process** Inject OS commands into app input to run on server.
+
 **Impact** Full system compromise, data loss.	
+
 **Mitigation** Input validation, least privilege execution.
 
 ### File Inclusion (LFI/RFI)	
+
 **Process** Include local/remote files via manipulated paths/URLs.	
+
 **Impact** Code execution, sensitive file exposure.
+
 **Mitigation** Input validation, disable remote file inclusion.
 
-###CSRF
+### CSRF
+
 **Process** Trick user into submitting unwanted requests while logged in.
+
 **Impact** Unauthorized transactions, account changes.
+
 **Mitigation**Anti-CSRF tokens, same-site cookies.
